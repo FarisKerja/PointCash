@@ -1,0 +1,244 @@
+/* assets/css/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== FLOATING LABEL SYSTEM ===== */
+
+/* Base Input */
+.floating-input {
+  @apply block w-full px-2.5 pt-5 pb-2.5 text-base text-gray-900 
+         bg-transparent border-0 border-b-2 border-gray-300 
+         appearance-none focus:outline-none focus:ring-0 
+         focus:border-teal-400;
+}
+
+.floating-input::placeholder {
+  color: transparent;
+}
+
+/* Base Label */
+.floating-label {
+  @apply absolute text-base text-gray-500 duration-300 transform 
+         pointer-events-none;
+}
+
+/* ===== INPUT FIELD ===== */
+
+/* Input Label Position */
+.floating-input-label {
+  @apply floating-label top-4 origin-[0] left-2.5;
+}
+
+/* Condition 1: Empty & Not Focused */
+.floating-input:placeholder-shown:not(:focus) + .floating-input-label {
+  transform: scale(1) translateY(0);
+  color: #6b7280;
+}
+
+/* Condition 2: Focused */
+.floating-input:focus + .floating-input-label {
+  transform: scale(0.75) translateY(-1rem);
+  color: #2DD4BF;
+}
+
+/* Condition 3: Has Value & Not Focused */
+.floating-input:not(:placeholder-shown) + .floating-input-label {
+  transform: scale(0.75) translateY(-1rem);
+}
+
+/* ===== TEXTAREA ===== */
+
+/* Textarea Base */
+.floating-textarea {
+  @apply block w-full px-2.5 pt-8 pb-2.5 text-base text-gray-900 
+         bg-transparent border-0 border-b-2 border-gray-300 
+         resize-none focus:outline-none focus:ring-0 
+         focus:border-teal-400;
+}
+
+.floating-textarea::placeholder {
+  color: transparent;
+}
+
+/* Textarea Label */
+.floating-textarea-label {
+  @apply floating-label top-2 origin-[0] left-2.5;
+}
+
+/* Condition 1: Empty & Not Focused */
+.floating-textarea:placeholder-shown:not(:focus) + .floating-textarea-label {
+  transform: scale(1) translateY(0);
+  color: #6b7280;
+}
+
+/* Condition 2: Focused */
+.floating-textarea:focus + .floating-textarea-label {
+  transform: scale(0.75) translateY(-1rem);
+  color: #2DD4BF;
+}
+
+/* Condition 3: Has Value & Not Focused */
+.floating-textarea:not(:placeholder-shown) + .floating-textarea-label {
+  transform: scale(0.75) translateY(-1rem);
+}
+
+.floating-select {
+  @apply block w-full px-2.5 pt-5 pb-2.5 text-base text-gray-900
+         bg-transparent border-0 border-b-2 border-gray-300
+         appearance-none focus:outline-none focus:ring-0
+         focus:border-teal-400;
+}
+
+/* Base label */
+.floating-select-label {
+  @apply floating-label top-4 left-2.5 origin-[0];
+}
+
+/* Empty & not focused */
+.floating-select:has(option:checked[value=""]) + .floating-select-label {
+  transform: scale(1) translateY(0);
+  color: #6b7280;
+}
+
+/* Focused */
+.floating-select:focus + .floating-select-label {
+  transform: scale(0.75) translateY(-1rem);
+  color: #2DD4BF;
+}
+
+/* Has value */
+.floating-select:not(:has(option:checked[value=""])) + .floating-select-label {
+  transform: scale(0.75) translateY(-1rem);
+}
+
+
+/* ===== HELPER ===== */
+.floating-container {
+  @apply relative py-2;
+}
+
+body {
+  @apply bg-gray-200;
+}
+
+.button-primary {
+  @apply rounded-md py-2 px-4 bg-violet-800 hover:bg-violet-600 text-sm text-white;
+}
+
+.button-sm-primary {
+  @apply rounded-full px-1 py-0.5  bg-violet-800 hover:bg-violet-600 text-sm text-white;
+}
+
+.button-success {
+  @apply rounded-md py-2 px-4 bg-emerald-700 hover:bg-emerald-500 text-sm text-white;
+}
+
+.button-sm-success {
+  @apply rounded-full px-1 py-0.5  bg-emerald-700 hover:bg-emerald-500 text-sm text-white;
+}
+
+.button-danger {
+  @apply rounded-md py-2 px-4 bg-rose-700 hover:bg-rose-600 text-sm text-white hover:text-black;
+}
+
+.button-sm-danger {
+  @apply rounded-full px-1 py-0.5 bg-rose-700 hover:bg-rose-600 text-sm text-white hover:text-black;
+}
+
+.button-warning {
+    @apply rounded-md py-2 px-4 bg-orange-600 hover:bg-orange-500 text-sm text-white hover:text-black;
+}
+
+.button-sm-warning {
+  @apply rounded-full px-1 py-0.5  bg-orange-600 hover:bg-orange-500 text-sm text-white hover:text-black;
+}
+
+.button-secondary {
+  @apply rounded-md py-2 px-4 bg-zinc-600 hover:bg-orange-500 text-sm text-white hover:text-black;
+}
+
+.button-sm-secondary {
+  @apply rounded-full px-1 py-0.5  bg-zinc-600 hover:bg-orange-500 text-sm text-white hover:text-black;
+}
+
+.button-info {
+  @apply rounded-md py-2 px-4 bg-sky-700 hover:bg-sky-600 text-sm text-white;
+}
+
+.button-sm-info {
+  @apply rounded-full px-1 py-0.5  bg-sky-700 hover:bg-sky-600 text-sm text-white;
+}
+
+.button-dark {
+  @apply rounded-md py-2 px-4 bg-neutral-900 hover:bg-neutral-600 text-sm text-white;
+}
+
+.button-sm-dark {
+  @apply rounded-full px-1 py-0.5  bg-neutral-900 hover:bg-neutral-600 text-sm text-white;
+}
+
+.title-card {
+  @apply px-6 pt-6 font-semibold text-center text-lg pb-2 bg-white rounded-t-lg border-b-2 border-slate-300 shadow max-w-2xl mx-auto
+}
+
+.body-card {
+  @apply px-6 pb-6 bg-white rounded-b-lg shadow max-w-2xl mx-auto
+}
+
+.title-card-gen {
+  @apply px-6 pt-6 font-semibold text-center text-lg pb-2 bg-white rounded-t-lg border-b-2 border-slate-300 shadow mx-auto
+}
+
+.body-card-gen {
+  @apply px-6 pb-6 bg-white rounded-b-lg shadow mx-auto
+}
+
+/* khusus untuk select with search */
+/*
+.select2-container {
+  width: 100% !important;
+  font-family: inherit;
+}
+
+.select2-selection {
+  min-height: 40px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  box-sizing: border-box;
+}
+
+.select2-selection__rendered {
+  padding: 0;
+  line-height: 1.5;
+  color: #111827;
+}
+
+.select2-selection__arrow {
+  height: 100%;
+}
+
+.select2-dropdown {
+  border: 1px solid #d1d5db;
+  background: #fff;
+}
+
+.select2-search__field {
+  border: 1px solid #d1d5db;
+  padding: 6px;
+  outline: none;
+}
+
+.select2-results__option {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.select2-results__option--highlighted {
+  background: #e5e7eb;
+}*/
+
+/* end of code */
